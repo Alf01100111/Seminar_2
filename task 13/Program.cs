@@ -1,15 +1,17 @@
-﻿int number = 3215687;
+﻿int number = new Random().Next(1,100000);
 int result = 0;
+System.Console.WriteLine($"Число {number}");
 
 if (number/100 == 0)
 {
     System.Console.WriteLine($"В числе {number} нет третьей цифры!");
 }
-while (number/1000 != 0)
+else
 {
-    number = number / 10;
+    while (number/100 >= 1)
+    {
     result = number % 10;
-}
-
-System.Console.Write("третья цифра ");
-System.Console.WriteLine(result);
+    number = number / 10;
+    }
+    System.Console.Write("третья цифра ");
+    System.Console.WriteLine(result);
